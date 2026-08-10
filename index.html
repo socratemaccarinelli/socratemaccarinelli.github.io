@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi Sono - Preview Home</title>
+    <title>Blog - Simona Staropoli</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -18,138 +18,280 @@
             font-family: 'Montserrat', sans-serif;
             background: #0d1511 url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
             background-size: cover;
+            color: #2c2c2c;
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
-            padding: 20px;
+            align-items: flex-start;
+            padding: 40px 20px;
         }
 
-        /* Card Chi Sono Home */
-        .card-chi-sono {
-            background-color: rgba(18, 29, 23, 0.85);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 20px;
-            padding: 35px 25px;
-            max-width: 420px;
+        /* Layout principale a due colonne */
+        .container {
+            display: flex;
+            gap: 30px;
+            max-width: 1200px;
             width: 100%;
-            text-align: center;
-            backdrop-filter: blur(8px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            align-items: flex-start;
         }
 
-        .card-chi-sono h2 {
-            font-family: 'Cormorant Garamond', serif;
-            color: #ffffff;
-            font-size: 2rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .card-chi-sono h2::after {
-            content: '';
-            display: block;
-            width: 80%;
-            height: 1px;
-            background: rgba(212, 175, 55, 0.2);
-            margin: 12px auto 0 auto;
-        }
-
-        .card-chi-sono img {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            object-fit: cover;
-        }
-
-        .card-chi-sono p {
-            color: #d1dfd7;
+        /* Colonna Sinistra - Articolo Main */
+        .main-content {
+            flex: 1;
+            background-color: rgba(238, 236, 227, 0.92);
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            line-height: 1.8;
             font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
+            color: #333333;
+        }
+
+        .main-content p {
+            margin-bottom: 20px;
+        }
+
+        .box-highlight {
+            background-color: rgba(223, 226, 220, 0.6);
+            border-left: 3px solid #8A6D3B;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .box-highlight p {
+            margin-bottom: 15px;
+        }
+
+        .box-highlight p:last-child {
+            margin-bottom: 0;
+        }
+
+        .signature {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-style: italic;
+            margin-top: 30px;
+            color: #2c3e35;
+        }
+
+        /* Colonna Destra - Sidebar */
+        .sidebar {
+            width: 360px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .widget {
+            background-color: rgba(18, 29, 23, 0.90);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 12px;
+            padding: 25px 20px;
+            color: #ffffff;
+            backdrop-filter: blur(5px);
+        }
+
+        .widget-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 10px;
+        }
+
+        /* Elementi Eventi */
+        .event-item {
+            margin-bottom: 15px;
+        }
+
+        .event-date {
+            font-size: 0.8rem;
+            color: #aaa;
+            margin-bottom: 3px;
+        }
+
+        .event-title {
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .btn-small {
+            display: inline-block;
+            padding: 4px 15px;
+            border: 1px solid #d4af37;
+            border-radius: 15px;
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 0.75rem;
+            transition: all 0.3s;
+        }
+
+        .btn-small:hover {
+            background: #d4af37;
+            color: #0d1511;
+        }
+
+        /* Widget Chi Sono */
+        .widget-chi-sono img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .widget-chi-sono p {
+            color: #d1dfd7;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
             font-weight: 300;
         }
 
         /* Pulsante Approfondisci */
         .btn-approfondisci {
-            display: inline-block;
+            display: block;
             width: 100%;
-            padding: 12px 20px;
+            text-align: center;
+            padding: 10px;
             border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 25px;
+            border-radius: 20px;
             color: #ffffff;
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
+            font-size: 0.85rem;
             background: transparent;
+            transition: all 0.3s ease;
         }
 
         .btn-approfondisci:hover {
             background: rgba(212, 175, 55, 0.2);
             border-color: #d4af37;
-            color: #ffffff;
-            transform: translateY(-2px);
         }
 
-        /* Icone Social / Contatto in Basso */
-        .card-socials {
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(212, 175, 55, 0.15);
+        /* Contenitore Icone Social e Bussola */
+        .social-icons {
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 15px;
+            margin-top: 20px;
         }
 
         .social-icon {
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #d1dfd7;
+            color: #fff;
             text-decoration: none;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
         }
 
-        .social-icon:hover {
-            background: rgba(212, 175, 55, 0.25);
-            color: #ffffff;
+        /* Effetti per la bussola fluttuante e pulsante */
+        .social-icon.bussola {
+            width: 44px;
+            height: 44px;
+            font-size: 1.2rem;
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            animation: fluttuaEPulsa 2.5s infinite ease-in-out;
         }
 
-        .social-icon svg {
-            width: 16px;
-            height: 16px;
-            fill: currentColor;
+        .social-icon.bussola:hover {
+            background: rgba(212, 175, 55, 0.5);
+            border-color: #d4af37;
+            animation-play-state: paused;
+        }
+
+        @keyframes fluttuaEPulsa {
+            0% {
+                transform: translateY(0) scale(1);
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+            }
+            50% {
+                transform: translateY(-5px) scale(1.08);
+                box-shadow: 0 0 12px 4px rgba(212, 175, 55, 0.3);
+            }
+            100% {
+                transform: translateY(0) scale(1);
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+            }
+        }
+
+        @media (max-width: 850px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="card-chi-sono">
-        <h2>Chi Sono</h2>
+    <div class="container">
         
-        <img src="simo.jpg" alt="Simona Staropoli">
-        
-        <p>Ciao, sono Simona. Dopo un lungo percorso personale e spirituale, ti accompagno alla riscoperta della tua natura più autentica...</p>
-        
-        <a href="chi-sono.html" class="btn-approfondisci">Approfondisci</a>
-        
-        <div class="card-socials">
-            <a href="#" class="social-icon" title="Facebook">
-                <svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
-            </a>
-            <a href="#" class="social-icon" title="Instagram">
-                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            </a>
-        </div>
+        <!-- SEZIONE PRINCIPALE (SINISTRA) -->
+        <main class="main-content">
+            <p>Non so chi sei e cosa ti abbia portato qui, ma sono sicura che se sei qui non è un caso.</p>
+            <p>Anche se qualcuno ti ha suggerito di guardare questo blog, anche se mi hai trovata in una ricerca, anche se...</p>
+            <p>Non importa il come o il perché, te lo ripeto: se sei qui <strong>NON è un caso</strong>.</p>
+            <p>Se deciderai di addentrarti in questo blog, porta sempre con te questo pensiero: sei arrivata perché era giusto o importante che lo facessi.</p>
+
+            <div class="box-highlight">
+                <p><strong>Arrivata a questo punto, hai due possibilità:</strong></p>
+                <p><strong>1 -</strong> Chiudere tutto o pensare che è il solito blog new age o di tendenza e continuare con la tua vita così com'è, pensando che è solamente un caso se mi stai leggendo e che hai solo sbagliato la ricerca.</p>
+                <p><strong>2 -</strong> Aprire la tua mente e il tuo cuore e ricevere ciò che queste parole ti diranno, leggere queste pagine come se tu fossi una bambina, come quando a scuola inizi a leggere, non hai barriere mentali, la società non ti ha ancora imposto ciò che è giusto e ciò che è sbagliato, hai solo voglia di scoprire il mondo.</p>
+            </div>
+
+            <p>Se opti per la soluzione due ti ringrazio di aver capito che la vita ti sta regalando un'opportunità, ti ringrazio di essere qui, ti ringrazio di essere un'anima che si sta risvegliando dal torpore dei limiti mentali che altri hanno deciso per te.</p>
+            <p>Grazie di essere semplicemente tu!</p>
+            <p><em>Che tu possa far risplendere la tua luce e camminare nella Bellezza ogni giorno.</em></p>
+
+            <div class="signature">Simona</div>
+        </main>
+
+        <!-- SIDEBAR (DESTRA) -->
+        <aside class="sidebar">
+            
+            <div class="widget">
+                <div class="event-item">
+                    <div class="event-date">22 Ottobre - La Voce del Tamburo</div>
+                    <a href="#" class="btn-small">Prenota</a>
+                </div>
+                <div class="event-item">
+                    <div class="event-title">Incontro di Guarigione Energetica</div>
+                    <div class="event-date">3 Novembre - Sessione di riequilibrio di gruppo</div>
+                    <a href="#" class="btn-small">Prenota</a>
+                </div>
+            </div>
+
+            <!-- WIDGET CHI SONO -->
+            <div class="widget widget-chi-sono">
+                <h3 class="widget-title">Chi Sono</h3>
+                <img src="simo.jpg" alt="Simona">
+                
+                <p>Ciao, sono Simona. Dopo un lungo percorso personale e spirituale, ti accompagno alla riscoperta della tua natura più autentica...</p>
+                
+                <!-- LINK CHE PORTA ALLA PAGINA DEDICATA -->
+                <a href="chi-sono.html" class="btn-approfondisci">Approfondisci</a>
+
+                <!-- ICONE SOCIAL CON BUSSOLA FLUTTUANTE E PULSANTE -->
+                <div class="social-icons">
+                    <a href="#" class="social-icon" title="Facebook">f</a>
+                    <a href="chi-sono.html" class="social-icon bussola" title="Esplora">🧭</a>
+                </div>
+            </div>
+
+        </aside>
+
     </div>
 
 </body>
