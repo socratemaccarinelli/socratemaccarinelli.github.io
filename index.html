@@ -1,1 +1,479 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simona Staropoli - Fai brillare la tua Luce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #121d17;
+            --card-bg: rgba(244, 241, 234, 0.95);
+            --sidebar-bg: rgba(22, 36, 29, 0.85);
+            --accent-gold: #d4af37;
+            --text-dark: #2c3531;
+            --text-light: #e0e6e3;
+            --text-muted: #8a9a90;
+            --box-accent: #e8eee9;
+            --border-color: rgba(212, 175, 55, 0.3);
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #0d1511 url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Overlay scuro per lo sfondo */
+        .body-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 20, 15, 0.65);
+            z-index: -1;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1140px;
+            padding: 20px;
+            margin: 0 auto;
+        }
+
+        /* Header e Logo */
+        header {
+            text-align: center;
+            padding: 40px 20px 20px 20px;
+            color: var(--text-light);
+        }
+
+        .symbol {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 15px auto;
+            border-radius: 50%;
+            border: 1px solid var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+            color: var(--accent-gold);
+            font-size: 18px;
+        }
+
+        h1.site-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        p.tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            color: #d1dfd7;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        /* Menu Navigazione */
+        nav {
+            margin-bottom: 40px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-light);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        nav a:hover {
+            background: rgba(212, 175, 55, 0.25);
+            border-color: var(--accent-gold);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* Layout Griglia */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 30px;
+            align-items: start;
+        }
+
+        @media (max-width: 900px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Card Principale */
+        .main-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 45px 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            backdrop-filter: blur(10px);
+        }
+
+        .main-card h2.section-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            letter-spacing: 3px;
+            color: #5a6b62;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #d5dfd9;
+            padding-bottom: 10px;
+        }
+
+        .main-card h3.welcome-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: #8c4327;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .main-card p {
+            margin-bottom: 18px;
+            font-size: 0.95rem;
+            color: #38423d;
+            line-height: 1.7;
+        }
+
+        .option-box {
+            background: var(--box-accent);
+            border-left: 3px solid #8c4327;
+            padding: 20px 22px;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+            font-size: 0.92rem;
+            color: #2c3531;
+        }
+
+        .option-box p {
+            margin-bottom: 12px;
+        }
+
+        .option-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .signature {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-style: italic;
+            color: #5a6b62;
+            margin: 30px 0 20px 0;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #d5dfd9;
+            font-size: 0.88rem;
+            color: #55635c;
+        }
+
+        .contact-info a {
+            color: #2c3531;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* Sidebar Destra */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .widget {
+            background: var(--sidebar-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 25px;
+            color: var(--text-light);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .widget-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 8px;
+        }
+
+        .event-item {
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .event-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .event-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #e2ece7;
+            margin-bottom: 4px;
+        }
+
+        .event-desc {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .btn-small {
+            display: inline-block;
+            padding: 4px 12px;
+            border: 1px solid var(--accent-gold);
+            border-radius: 12px;
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-size: 0.72rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .btn-small:hover {
+            background: var(--accent-gold);
+            color: #121d17;
+        }
+
+        /* Profile Img */
+        .profile-img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .profile-text {
+            font-size: 0.82rem;
+            color: #c2d1c9;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .btn-outline {
+            display: block;
+            text-align: center;
+            padding: 8px 15px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 20px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.78rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--accent-gold);
+            color: #121d17;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 30px 20px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            width: 100%;
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: underline;
+        }
+
+        footer a:hover {
+            color: var(--text-light);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="body-overlay"></div>
+
+    <div class="container">
+        <header>
+            <div class="symbol">✦</div>
+            <h1 class="site-title">Simona Staropoli</h1>
+            <p class="tagline">Fai brillare la tua Luce</p>
+
+            <nav>
+                <ul>
+                    <li><a href="#comincia">Comincia da qui</a></li>
+                    <li><a href="#storia">Storia di un viaggio</a></li>
+                    <li><a href="#sogno">Il Sogno dell'Anima</a></li>
+                    <li><a href="#sciamanesimo">Sciamanesimo</a></li>
+                    <li><a href="#sentiero">Il Sentiero Sciamanico</a></li>
+                    <li><a href="#trattamenti">Trattamenti</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="main-layout">
+            
+            <main class="main-card">
+                <h2 class="section-label">Home</h2>
+                <h3 class="welcome-title">Ben Arrivata!</h3>
+
+                <p>Ben arrivata o ben arrivato!</p>
+                <p>Non so chi sei e cosa ti abbia portato qui, ma sono sicura che se sei qui non è un caso.</p>
+                <p>Anche se qualcuno ti ha suggerito di guardare questo blog, anche se mi hai trovata in una ricerca, anche se...</p>
+                <p>Non importa il come o il perché, te lo ripeto: se sei qui <strong>NON è un caso</strong>.</p>
+                <p>Se deciderai di addentrarti in questo blog, porta sempre con te questo pensiero: sei arrivata perché era giusto o importante che lo facessi.</p>
+
+                <p style="margin-top: 25px; font-weight: 600;">Arrivata a questo punto, hai due possibilità:</p>
+
+                <div class="option-box">
+                    <p><strong>1 -</strong> Chiudere tutto o pensare che è il solito blog new age o di tendenza e continuare con la tua vita così com'è, pensando che è solamente un caso se mi stai leggendo e che hai solo sbagliato la ricerca.</p>
+                    <p style="margin-top: 15px;"><strong>2 -</strong> Aprire la tua mente e il tuo cuore e ricevere ciò che queste parole ti diranno, leggere queste pagine come se tu fossi una bambina, come quando a scuola inizi a leggere, non hai barriere mentali, la società non ti ha ancora imposto ciò che è giusto e ciò che è sbagliato, hai solo voglia di scoprire il mondo.</p>
+                </div>
+
+                <p>Se opti per la soluzione due ti ringrazio di aver capito che la vita ti sta regalando un'opportunità, ti ringrazio di essere qui, ti ringrazio di essere un'anima che si sta risvegliando dal torpore dei limiti mentali che altri hanno deciso per te.</p>
+                <p>Grazie di essere semplicemente tu!</p>
+                <p><em>Che tu possa far risplendere la tua luce e camminare nella Bellezza ogni giorno.</em></p>
+
+                <div class="signature">Simona</div>
+
+                <div class="contact-info">
+                    <strong>Contattami qui:</strong><br>
+                    SMS o Telegram: <strong>349.8615665</strong> | Email: <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>
+                </div>
+            </main>
+
+            <aside class="sidebar">
+                
+                <div class="widget">
+                    <h3 class="widget-title">Prossimi Incontri</h3>
+                    
+                    <div class="event-item">
+                        <div class="event-title">Meditazione di Luna Piena</div>
+                        <div class="event-desc">19 Ottobre - Un'ora di pratica per connettersi...</div>
+                        <a href="#prenota" class="btn-small">Prenota</a>
+                    </div>
+
+                    <div class="event-item">
+                        <div class="event-title">Workshop Sciamanico</div>
+                        <div class="event-desc">22 Ottobre - La Voce del Tamburo</div>
+                        <a href="#prenota" class="btn-small">Prenota</a>
+                    </div>
+
+                    <div class="event-item">
+                        <div class="event-title">Incontro di Guarigione Energetica</div>
+                        <div class="event-desc">3 Novembre - Sessione di riequilibrio di gruppo</div>
+                        <a href="#prenota" class="btn-small">Prenota</a>
+                    </div>
+                </div>
+
+                <!-- Box Chi Sono con la nuova immagine simo.jpg -->
+                <div class="widget">
+                    <h3 class="widget-title">Chi Sono</h3>
+                    <img src="simo.jpg" alt="Simona Staropoli" class="profile-img">
+                    <p class="profile-text">
+                        Ciao, sono Simona. Dopo un lungo percorso personale e spirituale, ti accompagno alla riscoperta della tua natura più autentica...
+                    </p>
+                    <a href="#approfondisci" class="btn-outline">Approfondisci</a>
+
+                    <div class="social-links">
+                        <a href="#" class="social-icon" title="Facebook">f</a>
+                        <a href="#" class="social-icon" title="Instagram">📷</a>
+                        <a href="https://t.me/3498615665" class="social-icon" title="Telegram">✈</a>
+                    </div>
+                </div>
+
+            </aside>
+
+        </div>
+
+        <footer>
+            Copyright 2026 - Simona Staropoli - Gavardo (BS)<br>
+            <a href="#privacy">Privacy Policy</a> | <a href="#cookie">Cookie Policy</a> | <a href="#disclaimer">Disclaimer</a>
+        </footer>
+    </div>
+
+</body>
+</html>
