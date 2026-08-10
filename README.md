@@ -427,7 +427,7 @@
 
                 <div class="contact-info">
                     <strong>Contattami qui:</strong><br>
-                    SMS o Telegram: <strong>349.8615665</strong> | Email: <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>
+                    Whatsapp: <strong>349.8615665</strong> | Email: <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>
                 </div>
             </main>
 
