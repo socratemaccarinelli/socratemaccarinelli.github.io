@@ -38,7 +38,7 @@
             align-items: center;
         }
 
-        /* Overlay scuro per sfondo foresta */
+        /* Overlay scuro per lo sfondo */
         .body-overlay {
             position: fixed;
             top: 0;
@@ -56,7 +56,7 @@
             margin: 0 auto;
         }
 
-        /* Header e Header Symbol */
+        /* Header e Logo */
         header {
             text-align: center;
             padding: 40px 20px 20px 20px;
@@ -97,7 +97,7 @@
             margin-bottom: 30px;
         }
 
-        /* Navigazione / Menu */
+        /* Menu Navigazione */
         nav {
             margin-bottom: 40px;
         }
@@ -132,7 +132,7 @@
             transform: translateY(-2px);
         }
 
-        /* Layout Principale Griglia */
+        /* Layout Griglia */
         .main-layout {
             display: grid;
             grid-template-columns: 1fr 340px;
@@ -146,7 +146,7 @@
             }
         }
 
-        /* Contenuto Principale / Card Home */
+        /* Card Principale */
         .main-card {
             background: var(--card-bg);
             border-radius: 16px;
@@ -221,7 +221,7 @@
             text-decoration: none;
         }
 
-        /* Sidebar / Colonna Destra */
+        /* Sidebar Destra */
         .sidebar {
             display: flex;
             flex-direction: column;
@@ -248,7 +248,6 @@
             padding-bottom: 8px;
         }
 
-        /* Eventi List */
         .event-item {
             margin-bottom: 16px;
             padding-bottom: 12px;
@@ -291,14 +290,15 @@
             color: #121d17;
         }
 
-        /* Profile Widget */
+        /* Profile Img */
         .profile-img {
             width: 100%;
-            height: 180px;
+            height: 240px;
             object-fit: cover;
             border-radius: 10px;
             margin-bottom: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .profile-text {
@@ -325,7 +325,6 @@
             color: var(--accent-gold);
         }
 
-        /* Social Icons */
         .social-links {
             display: flex;
             justify-content: center;
@@ -354,7 +353,6 @@
             color: #121d17;
         }
 
-        /* Footer */
         footer {
             margin-top: 50px;
             padding: 30px 20px;
@@ -379,13 +377,11 @@
     <div class="body-overlay"></div>
 
     <div class="container">
-        <!-- Header con Logo & Titolo -->
         <header>
             <div class="symbol">✦</div>
             <h1 class="site-title">Simona Staropoli</h1>
             <p class="tagline">Fai brillare la tua Luce</p>
 
-            <!-- Navigazione aggiornata -->
             <nav>
                 <ul>
                     <li><a href="#comincia">Comincia da qui</a></li>
@@ -398,10 +394,8 @@
             </nav>
         </header>
 
-        <!-- Layout Contenuto Principale + Sidebar -->
         <div class="main-layout">
             
-            <!-- Colonna Sinistra / Main Content -->
             <main class="main-card">
                 <h2 class="section-label">Home</h2>
                 <h3 class="welcome-title">Ben Arrivata!</h3>
@@ -427,14 +421,12 @@
 
                 <div class="contact-info">
                     <strong>Contattami qui:</strong><br>
-                    Whatsapp: <strong>349.8615665</strong> | Email: <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>
+                    SMS o Telegram: <strong>349.8615665</strong> | Email: <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>
                 </div>
             </main>
 
-            <!-- Colonna Destra / Sidebar Utile -->
             <aside class="sidebar">
                 
-                <!-- Widget Prossimi Incontri -->
                 <div class="widget">
                     <h3 class="widget-title">Prossimi Incontri</h3>
                     
@@ -457,10 +449,10 @@
                     </div>
                 </div>
 
-                <!-- Widget Chi Sono -->
+                <!-- Box Chi Sono con la nuova immagine simo.jpg -->
                 <div class="widget">
                     <h3 class="widget-title">Chi Sono</h3>
-                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80" alt="Simona Staropoli" class="profile-img">
+                    <img src="simo.jpg" alt="Simona Staropoli" class="profile-img">
                     <p class="profile-text">
                         Ciao, sono Simona. Dopo un lungo percorso personale e spirituale, ti accompagno alla riscoperta della tua natura più autentica...
                     </p>
@@ -469,7 +461,7 @@
                     <div class="social-links">
                         <a href="#" class="social-icon" title="Facebook">f</a>
                         <a href="#" class="social-icon" title="Instagram">📷</a>
-                        <a href="#" class="social-icon" title="Telegram">✈</a>
+                        <a href="https://t.me/3498615665" class="social-icon" title="Telegram">✈</a>
                     </div>
                 </div>
 
@@ -477,7 +469,6 @@
 
         </div>
 
-        <!-- Footer -->
         <footer>
             Copyright 2026 - Simona Staropoli - Gavardo (BS)<br>
             <a href="#privacy">Privacy Policy</a> | <a href="#cookie">Cookie Policy</a> | <a href="#disclaimer">Disclaimer</a>
@@ -486,5 +477,3 @@
 
 </body>
 </html>
-index.html
-Visualizzazione di index.html.
