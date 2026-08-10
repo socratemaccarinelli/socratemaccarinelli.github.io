@@ -5,74 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sciamanesimo - Simona Staropoli</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="./style.css">
-  <style>
-    /* Stili di recupero per garantire la resa grafica */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f8f6f0;
-      color: #333;
-      margin: 0;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-    }
-    .main-layout {
-      max-width: 800px;
-      width: 100%;
-      margin: 40px auto;
-    }
-    .main-card {
-      background: #ffffff;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    }
-    .section-label {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #8c7b6c;
-      margin-bottom: 8px;
-    }
-    .welcome-title {
-      font-size: 2rem;
-      color: #2c3e50;
-      margin-top: 0;
-      margin-bottom: 24px;
-    }
-    p {
-      line-height: 1.8;
-      font-size: 1.05rem;
-      color: #4a4a4a;
-      margin-bottom: 20px;
-    }
-    .btn-container {
-      text-align: center;
-      margin-top: 40px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 12px 28px;
-      background-color: #8c7b6c;
-      color: #ffffff !important;
-      text-decoration: none;
-      border-radius: 25px;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    }
-    .btn:hover {
-      background-color: #6e6053;
-    }
-  </style>
 </head>
-<body>
+<body class="subpage">
 
-  <div class="main-layout">
-    <main class="main-card">
-      <h2 class="section-label">Percorso Interiore</h2>
-      <h3 class="welcome-title">Sciamanesimo</h3>
+  <div class="card-container">
+    
+    <!-- HEADER DELLA CARD (Pulsante e Simbolo) -->
+    <div class="card-header">
+      <a href="index.html#comincia" class="btn-back">← COMINCIA DA QUI</a>
+      <div class="symbol-circle">✦</div>
+    </div>
 
+    <!-- TITOLO E SOTTOTITOLO -->
+    <h1 class="page-title">Sciamanesimo</h1>
+    <p class="subtitle-gold">Percorso Interiore</p>
+
+    <!-- CONTENUTO PRINCIPALE -->
+    <div class="card-body">
       <p>
         Lo Sciamanesimo è la più antica pratica spirituale dell'umanità, antecedente a qualsiasi religione organizzata. Nasce dall'unione profonda con la Natura e dalla consapevolezza che tutto ciò che ci circonda — alberi, pietre, acqua, vento e creature viventi — possiede una propria essenza e un'anima vitale.
       </p>
@@ -84,12 +33,15 @@
       <p>
         Nel mondo contemporaneo, approcciarsi allo Sciamanesimo non significa isolarsi dalla realtà quotidiana, ma ritrovare un profondo senso di rispetto e connessione con la Madre Terra. È un invito ad ascoltare quella voce interiore che guida i nostri passi, superando le disarmonie dell'anima per risvegliare la nostra vera Luce.
       </p>
+    </div>
 
-      <div class="btn-container">
-        <a href="index.html#comincia" class="btn">Comincia da qui</a>
-      </div>
+    <!-- PIÈ DI PAGINA CARD (Firma e Pulsante) -->
+    <div class="card-footer">
+      <p class="signature-gold">Un abbraccio di luce,</p>
+      <h2 class="signature-name">Simona</h2>
+      <a href="index.html#comincia" class="btn-back-bottom">← COMINCIA DA QUI</a>
+    </div>
 
-    </main>
   </div>
 
 </body>
