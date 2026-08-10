@@ -394,7 +394,7 @@
                     <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
                 </svg>
             </div>
-            <h1 class="site-title">Sorgente Interiore</h1>
+            <h1 class="site-title">Simona Staropoli</h1>
             <p class="site-tagline">Fai brillare la tua Luce</p>
         </header>
 
@@ -485,7 +485,7 @@
 
         <!-- Footer -->
         <footer>
-            <p>Copyright 2019/2026 - Simona Staropoli - Gavardo (Bs)</p>
+            <p>Copyright 2026 - Simona Staropoli - Gavardo (Bs)</p>
             <p style="margin-top: 6px;">
                 <a href="#">Privacy Policy</a> | <a href="#">Cookie Policy</a> | <a href="#">Disclaimer</a>
             </p>
